@@ -20,6 +20,11 @@ env:
 cache:
   apt: true
 
+matrix:
+  include:
+    - compiler: ": Win32"
+      env: HOST=i686-w64-mingw32 PPA="ppa:ubuntu-wine/ppa" PACKAGES="nsis gcc-mingw-w64-i686 g++-mingw-w64-i686 binutils-mingw-w64-i686 mingw-w64-dev wine1.7 bc" RUN_TESTS=true "MAKEJOBS="-j2"
+
 addons:
   apt:
     packages:
